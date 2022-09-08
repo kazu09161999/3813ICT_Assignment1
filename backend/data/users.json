@@ -1,0 +1,32 @@
+{
+    "users": [
+      {
+        "username": "Super",
+        "pwd": "111111",
+        "email": "super@gmail.com",
+        "id": "1",
+        "role": "superadmin"
+      },
+      {
+        "username": "Group",
+        "pwd": "222222",
+        "email": "groupadmin@gmail.com",      
+        "id": "2",
+        "role": "groupadmin"
+      },
+      {
+        "username": "Assist",
+        "pwd": "333333",
+        "email": "assist@gmail.com",
+        "id": "3",
+        "role": "groupassist"
+      },
+      {
+        "username": "user",
+        "pwd": "444444",
+        "email": "user@gmail.com",
+        "id": "4",
+        "role": "user"
+      }
+    ]
+  }
