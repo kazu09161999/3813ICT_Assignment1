@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './Home/Home.component';
 import { ChatComponent } from './chat/chat.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const routes:Routes=[
@@ -17,7 +18,7 @@ const routes:Routes=[
 ];
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent,
     LoginComponent,
       ProfileComponent,
