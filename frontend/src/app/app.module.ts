@@ -5,13 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule }   from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { Router, RouterModule,Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './Home/Home.component';
+import { ChatComponent } from './chat/chat.component';
 
+
+const routes:Routes=[
+  {path:'login',component:LoginComponent}
+];
 
 @NgModule({
-  declarations: [
+  declarations: [			
     AppComponent,
     LoginComponent,
-
+      ProfileComponent,
+      HomeComponent,
+      ChatComponent
    ],
   imports: [
     BrowserModule,
@@ -19,7 +30,8 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HttpClientModule],
+  bootstrap: [AppComponent],
+  exports:[RouterModule],
 })
 export class AppModule { }
