@@ -13,9 +13,9 @@ const BACKEND_URL = 'http://localhost:3000';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user:any={
-    username:null,
-    password:null
+  user = {
+    "username":"",
+    "password":""
   };
 
   constructor(private router:Router, private httpClient: HttpClient) { }
@@ -24,13 +24,16 @@ export class LoginComponent implements OnInit {
   }
   public login(){
 
-    const{username,password}=this.user;
-    this.httpClient.post(BACKEND_URL + '/login',{username:username,pwd:password} )
+
+    console.log(this.user);
+
+    this.httpClient.post(BACKEND_URL + '/login',{"username":this.user.username,"pwd":this.user.password })
 // this.httpClient.post(BACKEND_URL + '/login', user)
     .subscribe((data:any)=>{
       // alert("posting: " +JSON.stringify(user));
 
-      // alert("postRes: " +JSON.stringify(data));
+      // alert("ostRes: " +JSON.stringify(data));
+      console.log(data);
 
       if (data.ok){
         alert("correct");
