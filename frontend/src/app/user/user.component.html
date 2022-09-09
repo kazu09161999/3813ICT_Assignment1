@@ -70,18 +70,6 @@
           <div class="col-md-6">
 
           </div>
-          <div class="col-md-3">
-              <select [(ngModel)]="sortBy" class="form-control">
-                  <option selected value="" >Select Sort By</option>
-                  <option>Name</option>
-                  <option>Password</option>
-                  <option>E-mail</option>
-                  <option>Role</option>
-              </select>
-          </div>
-          <div class="col-md-3">
-              <input type="text" [(ngModel)]="searchText" placeholder="Search Text"  class="form-control"/>
-          </div>
       </div>
       <div class="row">
           <div class="col-md-12">
@@ -106,12 +94,12 @@
                               <td>{{item.Role}}</td>
 
                               <td class="text-center">
-                                  <i class="fa fa-pencil-square" style="color: blueviolet;font-size: 19px;"  aria-hidden="true"></i>
-                                  <i class="fa fa-trash mx-2" style="color:red;font-size: 19px;"  aria-hidden="true"></i>
+                                  <i class="fa fa-pencil-square" (click)="onEdit(item)" style="color: blueviolet;font-size: 19px;"  aria-hidden="true"></i>
+                                  <i class="fa fa-trash mx-2" (click)="onDelete(item)" style="color:red;font-size: 19px;"  aria-hidden="true"></i>
                               </td>
                           </tr>
                       </ng-container>
-                      <ng-container >
+                      <ng-container *ngIf="userArr.length == 0">
                           <tr>
                               <td colspan="8" class="text-center"> No Record Present</td>
                           </tr>

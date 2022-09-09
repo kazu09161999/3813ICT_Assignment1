@@ -14,12 +14,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GroupComponent } from './group/group.component';
 import { UserComponent } from './user/user.component';
 
-
-// const routes:Routes=[
-//   {path:'login',component:LoginComponent},
-//   {path:'profile',component:ProfileComponent}
-// ];
-
 @NgModule({
   declarations: [
     AppComponent,
