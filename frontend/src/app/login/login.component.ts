@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('id', data.id);
         localStorage.setItem('role', data.role);
 
-        this.router.navigateByUrl("/account");
+        this.router.navigateByUrl("/profile");
       }
       else {
         alert("username or password incorrect");

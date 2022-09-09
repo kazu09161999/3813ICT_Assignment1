@@ -14,7 +14,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const routes:Routes=[
-  {path:'login',component:LoginComponent}
+  {path:'login',component:LoginComponent},
+  {path:'profile',component:ProfileComponent}
 ];
 
 @NgModule({
