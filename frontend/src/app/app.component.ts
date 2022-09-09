@@ -11,13 +11,20 @@ export class AppComponent implements OnInit {
   title = 'frontend';
   userName=localStorage.getItem('username');
 
+  role=localStorage.getItem('role');
+  login=false;
+  superadmin=false;
+  groupAdmin=false;
+  loginbutton=true;
 
   constructor(private router:Router) {
 
   }
 
   ngOnInit():void {
-
+    // this.SuperAdmin(),
+    // this.Status(),
+    // this.GroupAdmin()
   }
 
   public logout(){
