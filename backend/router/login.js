@@ -28,14 +28,14 @@ module.exports = function(req, res) {
               res.send({"ok":true,
               "username":userArray.users[i]["username"],
               "pwd":userArray.users[i]["pwd"],
-              email:userArray.users[i]["email"],
-              id:userArray.users[i]["id"],
-              role:userArray.users[i]["role"],
+              "email":userArray.users[i]["email"],
+              "id":userArray.users[i]["id"],
+              "role":userArray.users[i]["role"],
           });
           break
           }  
       }
-      
+
       if (login == false) {
         res.send({"ok":false})
       }

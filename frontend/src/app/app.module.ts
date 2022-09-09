@@ -11,12 +11,14 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './Home/Home.component';
 import { ChatComponent } from './chat/chat.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GroupComponent } from './group/group.component';
+import { UserComponent } from './user/user.component';
 
 
-const routes:Routes=[
-  {path:'login',component:LoginComponent},
-  {path:'profile',component:ProfileComponent}
-];
+// const routes:Routes=[
+//   {path:'login',component:LoginComponent},
+//   {path:'profile',component:ProfileComponent}
+// ];
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ const routes:Routes=[
     LoginComponent,
       ProfileComponent,
       HomeComponent,
-      ChatComponent
+      ChatComponent,
+      GroupComponent,
+      UserComponent
    ],
   imports: [
     BrowserModule,
