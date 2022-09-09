@@ -1,3 +1,127 @@
-<p>
-  user works!
-</p>
+
+
+<div class="row">
+  <div class="col-md-4">
+      <h3>User Adding Form</h3>
+      <div class="outerDiv">
+          <form #form="ngForm">
+          <div class="row">
+              <div class="col-md-5">
+                  <label>Name</label>
+              </div>
+              <div class="col-md-7">
+                  <input type="text" required #uname="ngModel" [(ngModel)]="userObj.UserName"  placeholder="UserName" name="UserName"  class="form-control"/>
+                  <div *ngIf="uname.touched">
+                      <span class="text-danger font-weight-bold" *ngIf="uname.errors?.['required']"> Required</span>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="row">
+              <div class="col-md-5">
+                  <label>Password</label>
+              </div>
+              <div class="col-md-7">
+                  <input type="text" required #password="ngModel"  [(ngModel)]="userObj.Password" placeholder="Password" name="Password" class="form-control"/>
+                  <div *ngIf="password.touched">
+                      <span class="text-danger"> Required</span>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-5">
+                  <label>E-mail</label>
+              </div>
+              <div class="col-md-7">
+                  <input type="text" required #email="ngModel" [(ngModel)]="userObj.Email" placeholder="E-mail" name="E-mail"  class="form-control"/>
+                  <div *ngIf="email.touched">
+                      <span class="text-danger" > Required</span>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-5">
+                  <label >Role</label>
+              </div>
+              <div class="col-md-7">
+                  <input type="text" required #role="ngModel" [(ngModel)]="userObj.Role" placeholder="Role" name="Role" class="form-control"/>
+                  <div *ngIf="role.touched">
+                      <span class="text-danger"> Required</span>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+              </div>
+              <div class="col-md-6 text-end">
+                 <button class="btn btn-secondary btn-sm " style="padding-left: 20px;padding-right: 20px;"> Cancel</button>
+                 <button class="btn btn-secondary btn-sm mx-2" style="padding-left: 25px;padding-right: 25px;" [disabled]="form.invalid" (click)="onSave()" > Save</button>
+              </div>
+          </div>
+      </form>
+      </div>
+  </div>
+  <div class="col-md-8">
+      <h3>User List</h3>
+      <div class="outerDiv">
+        <div class="row">
+          <div class="col-md-6">
+
+          </div>
+          <div class="col-md-3">
+              <select [(ngModel)]="sortBy" class="form-control">
+                  <option selected value="" >Select Sort By</option>
+                  <option>Name</option>
+                  <option>Password</option>
+                  <option>E-mail</option>
+                  <option>Role</option>
+              </select>
+          </div>
+          <div class="col-md-3">
+              <input type="text" [(ngModel)]="searchText" placeholder="Search Text"  class="form-control"/>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Password</th>
+                          <th>E-mail</th>
+                          <th>Role</th>
+                          <th>Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <ng-container *ngIf="userArr.length != 0">
+                          <tr *ngFor="let item of userArr;let sr = index">
+                              <td>{{sr+1}}</td>
+                              <td>{{item.UserName}}</td>
+                              <td>{{item.Password}}</td>
+                              <td>{{item.Email}}</td>
+                              <td>{{item.Role}}</td>
+
+                              <td class="text-center">
+                                  <i class="fa fa-pencil-square" style="color: blueviolet;font-size: 19px;"  aria-hidden="true"></i>
+                                  <i class="fa fa-trash mx-2" style="color:red;font-size: 19px;"  aria-hidden="true"></i>
+                              </td>
+                          </tr>
+                      </ng-container>
+                      <ng-container >
+                          <tr>
+                              <td colspan="8" class="text-center"> No Record Present</td>
+                          </tr>
+                      </ng-container>
+                  </tbody>
+              </table>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
+</div>

@@ -11,19 +11,22 @@ export class AppComponent implements OnInit {
   title = 'frontend';
   userName=localStorage.getItem('username');
 
+
   constructor(private router:Router) {
 
   }
 
-  ngOnInit() {
-    // this.getDataFromAPI();
+  ngOnInit():void {
+
   }
 
-  // getDataFromAPI() {
-  //   this.service.getData().subscribe((response) => {
-  //     console.log('Response from API is ', response)
-  //   }, (error) => {
-  //     console.log('Erroe is ', error)
-  //   })
-  // }
+  public logout(){
+    localStorage.clear();
+    //window.location.reload(); //refresh the current page
+    //+redirect to login page?
+    //window.location.reload(); //refresh the current page
+    this.router.navigateByUrl('login');
+
+  }
+
 }

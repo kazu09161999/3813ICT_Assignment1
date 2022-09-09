@@ -23,6 +23,7 @@ console.log(__dirname);
 //   console.log('Express API os running at port 3000')
 // })
 app.post('/login',require('./router/login'));
+
 const http = require('http').Server(app);
 var server=http.listen(3000,function(){
     console.log("server Listening on port :3000");

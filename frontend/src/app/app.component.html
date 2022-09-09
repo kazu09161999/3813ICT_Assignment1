@@ -17,15 +17,26 @@
       <li  class="nav-item">
         <a  class="nav-link" routerLink="/profile">Profile</a>
       </li>
-      <li  class="nav-item">
+
+      <li class="nav-item">
         <a class="nav-link" routerLink="/group">Group</a>
       </li>
-      <li  class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" routerLink="/user">User</a>
       </li>
       <li class="nav-item">
-        <button  type="submit"  class="btn btn-primary">Log out</button>
+        <button type="submit" class="btn btn-primary">Log out</button>
       </li>
+
+      <!-- <li *ngIf="groupAdmin" class="nav-item">
+        <a *ngIf="groupAdmin" class="nav-link" routerLink="/group">Group</a>
+      </li>
+      <li  *ngIf="superadmin" class="nav-item">
+        <a *ngIf="superadmin" class="nav-link" routerLink="/user">User</a>
+      </li>
+      <li *ngIf="login" class="nav-item">
+        <button  *ngIf="login" type="submit"  (click) ="logout()" class="btn btn-primary">Log out</button>
+      </li> -->
     </ul>
   </div>
 </nav>
