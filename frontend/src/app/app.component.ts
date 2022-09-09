@@ -22,18 +22,46 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit():void {
-    // this.SuperAdmin(),
-    // this.Status(),
-    // this.GroupAdmin()
+    this.SuperAdmin(),
+    this.Status(),
+    this.GroupAdmin()
   }
 
   public logout(){
     localStorage.clear();
-    //window.location.reload(); //refresh the current page
-    //+redirect to login page?
-    //window.location.reload(); //refresh the current page
     this.router.navigateByUrl('login');
+  }
 
+  public Status(){
+    if(this.userName===null){
+      this.login=false
+      this.loginbutton=true;
+    }else{
+      this.login=true
+      this.loginbutton=false;
+    }
+    if(this.login){
+      console.log(this.login);
+    }
+    else{
+      console.log(this.login);
+    }
+  }
+  public SuperAdmin(){
+    this.role=localStorage.getItem('role');
+    if(this.role=="superadmin"){
+      this.superadmin=true;
+    }else{
+      this.superadmin=false;
+    }
+  }
+  public GroupAdmin(){
+    this.role=localStorage.getItem('role');
+    if(this.role==="groupadmin"){
+      this.groupAdmin=true;
+    }else{
+      this.groupAdmin=false;
+    }
   }
 
 }
